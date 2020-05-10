@@ -1,0 +1,2 @@
+class Cafeteria < ApplicationRecord
+end
