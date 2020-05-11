@@ -7,9 +7,12 @@
 .cafeteriaDate
   = @cafeteria.created_at
 .cafeteriaAuthor
+  = link_to @cafeteria.user.username, user_path(@cafeteria.user), class: "content__right__bottom--userName--btn"
 .cafeteriaText
   = simple_format @cafeteria.detail
 - if user_signed_in? && current_user.id == @cafeteria.user_id
   .videoManage
   = link_to "編集", edit_cafeteria_path(@cafeteria.id), class: "videoManage__edit"
   = link_to "削除", cafeteria_path(@cafeteria.id), method: :delete, class: "videoManage__delete"
+= render "shared/footer"
+
