@@ -1,7 +1,7 @@
 #header.big-bg
   .wrapper
     = render "shared/header"
-  .page-title 食堂一覧
+  .page-title #{@user.username}さんの投稿一覧
 - @cafeterias.each do |cafeteria|
   .content
     .content__left
@@ -14,4 +14,3 @@
           = link_to cafeteria.user.username, user_path(cafeteria.user), class: "content__right__bottom--userName--btn"
         .content__right__bottom--date
           = cafeteria.created_at
-= render "shared/footer"
