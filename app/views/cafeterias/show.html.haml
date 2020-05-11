@@ -1,0 +1,11 @@
+#header.big-bg
+  .wrapper
+    = render "shared/header"
+  .page-title #{@cafeteria.name}の詳細
+.cafeteriaTitle
+  = @cafeteria.name
+.cafeteriaDate
+  = @cafeteria.created_at
+.cafeteriaAuthor
+.cafeteriaText
+  = simple_format @cafeteria.detail
