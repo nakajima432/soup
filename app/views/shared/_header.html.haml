@@ -1,0 +1,51 @@
+%header.page-header.wrapper
+  .title-list
+    = link_to '/', class: "home-link" do
+      = icon('fas', 'mug-hot',class: 'soup-icon')
+      %p.title
+        Soup
+    %h6.sub-title
+      \- 子ども食堂交流コミュニティ -
+  %nav
+    %ul.main-nav
+      %li
+        %a{href: cafeterias_path} 投稿する
+      %li
+        %a{href: "#"} 食堂一覧
+      - if user_signed_in?
+        %li
+          = link_to current_user.username, "#"
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        %li
+          = link_to "ログイン", new_user_session_path
+
+
+
+-# -# .header
+-# -#   %ul.header__title-lists
+-#     %li.title-list
+-#       = link_to '/', class: "home-link" do
+-#         = icon('fab', 'youtube',class: 'youtube-icon')
+-#         %p.title
+-#           YOUREVI
+-# -#     %li.title-list
+-# -#       %h3.sub-title
+-# -#         \- ユーレビ -
+
+-# -#   %ul.header__lists
+-# -#     %li.list
+-# -#       = link_to new_video_path, class: "header__right--btn" do
+-# -#         プレゼンする
+-# -#     %li.list
+-# -#       = link_to videos_path, class: "header__right--btn" do
+-# -#         投稿一覧
+-#     - if user_signed_in?
+-#       %li.list
+-#         = link_to current_user.user_name, user_path(current_user), class: "header__right--btn"
+-#       %li.list
+-#         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+-#     - else
+-#       %li.list
+-#         = link_to "ログイン", new_user_session_path, class: "header__right--btn"
