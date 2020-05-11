@@ -2,4 +2,14 @@
   .wrapper
     = render "shared/header"
   .page-title 食堂一覧
+- @cafeterias.each do |cafeteria|
+  .content
+    .content__left
+      .content__left--image
+    .content__right
+      .content__right__top
+        = link_to cafeteria.name, cafeteria_path(cafeteria.id), class: "content__right__top--title"
+      .content__right__bottom
+        .content__right__bottom--date
+          = cafeteria.created_at
 = render "shared/footer"
