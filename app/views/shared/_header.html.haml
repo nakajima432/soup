@@ -9,9 +9,9 @@
   %nav
     %ul.main-nav
       %li
-        %a{href: cafeterias_path} 投稿する
+        %a{href: new_cafeteria_path} 投稿する
       %li
-        %a{href: "#"} 食堂一覧
+        %a{href: cafeterias_path} 食堂一覧
       - if user_signed_in?
         %li
           = link_to current_user.username, "#"

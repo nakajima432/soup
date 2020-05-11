@@ -5,14 +5,14 @@ $top-text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru G
   background-position: center top;
   background-repeat: no-repeat;
 }
-#home {
+#top {
   background-image: url(images/top2.jpeg);
   min-height: 100vh;
 }
-#home .page-title {
+#top .page-title {
   text-transform: none;
 }
-.home-content {
+.top-content {
   margin-top: 5%;
   .page-title {
   font-size: 4.7rem;
@@ -33,7 +33,7 @@ $top-text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru G
   // margin-left: 8%;
   }
 }
-.home-content p {
+.top-content p {
   font-size: 1.8rem;
   margin: 6px 0 10px;
   font-family: $top-text;
