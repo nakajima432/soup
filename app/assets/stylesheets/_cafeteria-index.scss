@@ -1,23 +1,45 @@
-.content {
-  margin-top: 20px;
+$text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+// .cafeterias-wrapper {
+//   // display: flex;
+//   .content-box {
+//       margin-top: 20px;
+.content-image {
+  .content-image__box {
+    border-radius: 8px;
+  }
 }
-.content__right__top--title {
-  color: #432;
+.content-bottom {
+  .cafeteria-name a {
+    font-family: $text;
+    color: #432;
+  }
+  .cafeteria-name a:hover {
+    color: #0bd;
+  }
+  .detail {
+    display: flex;
+    .detail--userName a {
+      color: #432;
+      margin-right: 15px;
+      font-family: $text;
+    }
+    .detail--userName a:hover {
+      color: #0bd;
+    }
+    .detail--date {
+      color: #432;
+    }
+  }
 }
+//   }
+// }
 
-.content__right__bottom--userName--btn {
-  color: #432;
-  margin-right: 15px;
-}
 
-.content__right__bottom {
-  display: flex;
-}
 
-.content__right__top--title:hover {
-  color: #0bd;
-}
-
-.content__right__bottom--userName--btn:hover {
-  color: #0bd;
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 6%;
+  margin-bottom: 50px;
 }
