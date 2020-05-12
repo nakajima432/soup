@@ -26,8 +26,8 @@
                   %td= simple_format @cafeteria.detail
               - if user_signed_in? && current_user.id == @cafeteria.user_id
                 .videoManage
-                = link_to "編集", edit_cafeteria_path(@cafeteria.id), class: "videoManage__edit"
-                = link_to "削除", cafeteria_path(@cafeteria.id), method: :delete, class: "videoManage__delete"
+                = link_to "編集画面へ", edit_cafeteria_path(@cafeteria.id), class: "button is-success cafeteriaManage__edit"
+                = link_to "投稿の削除", cafeteria_path(@cafeteria.id), method: :delete, class: "button is-danger cafeteriaManage__delete"
       .column.is-4
         %article.panel.is-link
           %p.panel-heading
