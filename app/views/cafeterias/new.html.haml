@@ -4,10 +4,8 @@
   .page-title 子ども食堂を投稿する
 = form_with model: @cafeteria, class: "form", url: cafeterias_path, local: true do |f|
   = f.text_field :name, placeholder: :お店の名前, class: "form-contents"
-  = f.text_field :image, placeholder: :画像, class: "form-contents"
+  = f.file_field :image
   = f.text_field :addres, placeholder: :場所, class: "form-contents"
   = f.text_area :detail, placeholder: :訪問した感想を教えてください, class: "form-detail"
   = f.submit '投稿する', class: "form-btn"
 = render "shared/footer"
-
--# [ :admin, @work ]
