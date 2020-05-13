@@ -1,4 +1,7 @@
 class CafeteriasController < ApplicationController
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_cafeteria, only: [:show, :edit]
+
   def index
     @cafeterias = Cafeteria.includes(:user)
   end
@@ -13,11 +16,9 @@ class CafeteriasController < ApplicationController
   end
 
   def show
-    @cafeteria = Cafeteria.find(params[:id])
   end
 
   def edit
-    @cafeteria = Cafeteria.find(params[:id])
   end
 
   def update
@@ -36,4 +37,9 @@ class CafeteriasController < ApplicationController
   def cafeteria_params
     params.require(:cafeteria).permit(:name, :image, :detail, :addres).merge(user_id: current_user.id)
   end
+
+  def set_cafeteria
+    @cafeteria = Cafeteria.find(params[:id]) 
+  end
+
 end
