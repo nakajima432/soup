@@ -1,11 +1,7 @@
 $text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
 
-.content-image {
-  .content-image__box {
-    border-radius: 8px;
-  }
-}
-.content-bottom {
+
+.card-content {
   .cafeteria-name a {
     font-family: $text;
     color: #432;
@@ -13,16 +9,17 @@ $text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothi
   .cafeteria-name a:hover {
     color: #0bd;
   }
+  .media--userName {
+    margin-top: 12px;
+  }
+  .media--userName a {
+    color: #432;
+    font-family: $text;
+  }
+  .media--userName a:hover {
+    color: #0bd;
+  }
   .detail {
-    display: flex;
-    .detail--userName a {
-      color: #432;
-      margin-right: 15px;
-      font-family: $text;
-    }
-    .detail--userName a:hover {
-      color: #0bd;
-    }
     .detail--date {
       color: #432;
     }
@@ -40,3 +37,4 @@ $text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothi
   border: 1px solid rgba(0,0,0,0.125);
   border-radius: 0.25rem;
 }
+

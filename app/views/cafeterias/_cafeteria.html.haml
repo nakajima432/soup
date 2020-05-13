@@ -13,7 +13,8 @@
       .media
         .media-left
           %figure.image.is-48x48
-            = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png", class: "profile_image"
+            = link_to user_path(cafeteria.user) do
+              = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png", class: "profile_image"
         .media--userName
           = link_to cafeteria.user.username, user_path(cafeteria.user), class: "content__right__bottom--userName--btn"
       .detail
@@ -22,3 +23,13 @@
 
 
 
+    -# .card-content
+    -#   .media
+    -#     .media-left
+    -#       %figure.image.is-48x48
+    -#         = attachment_image_tag recipe.user, :profile_image, fallback: "no-image.png", class: "profile_image"
+    -#     .media-content
+    -#       .title= link_to recipe.user.username, user_path(recipe.user)
+    -#   .content
+    -#     %time>= recipe.updated_at.strftime("%Y-%m-%d %H:%M")
+    -#     更新
