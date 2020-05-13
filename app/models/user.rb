@@ -4,5 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # mount_uploader :profile_image_id, ImageUploader
+  attachment :profile_image
   has_many :cafeterias
+  validates :username, presence: true
 end

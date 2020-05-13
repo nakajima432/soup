@@ -1,0 +1,10 @@
+#header.big-bg
+  .wrapper
+    = render "shared/header"
+  .page-title マイページの編集
+= form_with model: @user, class: "form", local: true do |f|
+  = f.text_field :username, placeholder: :名前の変更, class: "form-contents"
+  = f.file_field :profile_image
+  = f.text_area :profile, placeholder: :プロフィール情報を入力してください, class: "form-detail"
+  = f.submit '完了する', class: "form-btn"
+= render "shared/footer"

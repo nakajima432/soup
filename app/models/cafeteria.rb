@@ -3,5 +3,5 @@ class Cafeteria < ApplicationRecord
   belongs_to :user
 
   mount_uploader :image, ImageUploader
-  # attachment :image
+  attachment :profile_image
 end

@@ -15,6 +15,14 @@
               %span.icon.is-small.is-left
                 %i.fas.fa-user
           .field
+            -# = f.label :profile_image_id, class: "label"
+            -# %p.control.has-icons-left
+              -# - if @user.profile_image_id.url.present?
+              -#   = image_tag("images/no-image.png")
+              -# - else
+              -#   = image_tag @user.profile_image_id.url
+              -# = f.file_field :profile_image
+          .field
             = f.label :email, class: "label"
             %p.control.has-icons-left
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "input"
