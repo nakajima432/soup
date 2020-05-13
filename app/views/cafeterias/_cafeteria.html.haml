@@ -1,5 +1,3 @@
--# .cafeterias-wrapper
--#   .content-box
 .column.is-4
   .card
     .card-image
@@ -14,12 +12,13 @@
         .media-left
           %figure.image.is-48x48
             = link_to user_path(cafeteria.user) do
-              = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png", class: "profile_image"
+              = attachment_image_tag cafeteria.user, :profile_image, fallback: "images/no-image.png", class: "profile_image"
         .media--userName
           = link_to cafeteria.user.username, user_path(cafeteria.user), class: "content__right__bottom--userName--btn"
       .detail
         .detail--date
           = cafeteria.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  
 
 
 

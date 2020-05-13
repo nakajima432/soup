@@ -1,5 +1,5 @@
 class TopController < ApplicationController
-  # def index
-  #   @user = User.all
-  # end
+  def index
+    @user = current_user
+  end
 end

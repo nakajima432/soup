@@ -19,7 +19,6 @@
               = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png"
             %p.current-username
               = current_user.username
-            
         %li
           = link_to "ログアウト", destroy_user_session_path, method: :delete
       - else

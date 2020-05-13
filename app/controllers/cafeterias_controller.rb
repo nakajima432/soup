@@ -3,10 +3,12 @@ class CafeteriasController < ApplicationController
   before_action :set_cafeteria, only: [:show, :edit]
 
   def index
-    @cafeterias = Cafeteria.includes(:user)
+    @user = current_user
+    @cafeterias = Cafeteria.includes(:user).order("created_at DESC").page(params[:page]).per(6)
   end
 
   def new
+    @user = current_user
     @cafeteria = Cafeteria.new
   end
 
@@ -16,9 +18,11 @@ class CafeteriasController < ApplicationController
   end
 
   def show
+    @user = current_user
   end
 
   def edit
+    @user = current_user
   end
 
   def update
