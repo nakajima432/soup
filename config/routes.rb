@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   resources :cafeterias do
     resources :comments, only: :create
   end
-  # resources :cafeterias, as: :cafeterium
   resources :users, only: [:show, :edit, :update] 
 end

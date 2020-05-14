@@ -9,3 +9,17 @@
 #cafeteria_text {
   width: 100%;
 }
+
+.impression {
+  border-bottom: 1px solid #aaaaaa;
+  padding-bottom: 0.5rem;
+}
+
+.content h4 {
+  margin-bottom: 0.25rem;
+}
+
+.content p:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content blockquote:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
