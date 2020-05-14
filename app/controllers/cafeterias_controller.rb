@@ -19,6 +19,8 @@ class CafeteriasController < ApplicationController
 
   def show
     @user = current_user
+    @comment = Comment.new
+    @comments = @cafeteria.comments.includes(:user)
   end
 
   def edit

@@ -15,8 +15,8 @@
       - if user_signed_in?
         %li
           = link_to user_path(current_user), class: "my-page" do
-            %figure.image.is-48x48
-              = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png"
+            -# %figure.image.is-48x48
+            -#   = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png"
             %p.current-username
               = current_user.username
         %li
@@ -25,35 +25,3 @@
         %li
           = link_to "ログイン", new_user_session_path
 
-          -# = link_to current_user.username, user_path(current_user)
-          -# %figure.image.is-48x48
-          -#   = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png"
-
-
-
--# -# .header
--# -#   %ul.header__title-lists
--#     %li.title-list
--#       = link_to '/', class: "home-link" do
--#         = icon('fab', 'youtube',class: 'youtube-icon')
--#         %p.title
--#           YOUREVI
--# -#     %li.title-list
--# -#       %h3.sub-title
--# -#         \- ユーレビ -
-
--# -#   %ul.header__lists
--# -#     %li.list
--# -#       = link_to new_video_path, class: "header__right--btn" do
--# -#         プレゼンする
--# -#     %li.list
--# -#       = link_to videos_path, class: "header__right--btn" do
--# -#         投稿一覧
--#     - if user_signed_in?
--#       %li.list
--#         = link_to current_user.user_name, user_path(current_user), class: "header__right--btn"
--#       %li.list
--#         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
--#     - else
--#       %li.list
--#         = link_to "ログイン", new_user_session_path, class: "header__right--btn"
