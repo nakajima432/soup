@@ -15,8 +15,8 @@
       - if user_signed_in?
         %li
           = link_to user_path(current_user), class: "my-page" do
-            -# %figure.image.is-48x48
-            -#   = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png"
+            %figure.image.is-48x48
+              = attachment_image_tag current_user, :profile_image, fallback: "images/no-image.png"
             %p.current-username
               = current_user.username
         %li
