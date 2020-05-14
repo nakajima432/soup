@@ -40,4 +40,25 @@
               %i.fas.fa-user{"aria-hidden" => "true"}
             = @cafeteria.user.username
             さんのページへ
+  -# .container
+  -# - if current_user
+  -#   = form_with model: [@cafeteria, @comment], class: "form", local: true do |f|
+  -#     .field
+  -#       = f.label :text, "コメントを投稿する", class: "label"
+  -#       = f.text_area :text, placeholder: "コメント内容", rows: "3"
+  -#     = f.submit "SEND", class: "comment-btn"
+  -# - else
+  -#   %strong
+  -#     %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+  -# .comments
+  -#   %h4 ＜コメント一覧＞
+  -#   - if @comments
+  -#     - @comments.each do |comment|
+  -#       %p
+  -#         %strong
+  -#           = link_to comment.user.username, "/users/#{comment.user_id}"
+  -#           ：
+  -#         = comment.text
 = render "shared/footer"
+
+-# = form_with model: [@cafeteria, @comment], class: "form", url: cafeterias_path, local: true do |f|
