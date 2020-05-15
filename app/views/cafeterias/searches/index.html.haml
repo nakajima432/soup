@@ -10,6 +10,6 @@
   .cafeterias-container
     .columns.is-multiline
       - @cafeterias.each do |cafeteria|
-        = render partial: "cafeteria", locals: { cafeteria: cafeteria }
+        = render partial: "cafeterias/cafeteria", locals: { cafeteria: cafeteria }
       = paginate(@cafeterias)
 = render "shared/footer"

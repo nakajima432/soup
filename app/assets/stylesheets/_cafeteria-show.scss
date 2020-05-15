@@ -5,3 +5,42 @@
 .table.is-narrow td {
   padding: 0.5em 0.5em;
 }
+
+#cafeteria_text {
+  width: 100%;
+}
+
+.impression {
+  border-bottom: 1px solid #aaaaaa;
+  padding-bottom: 0.5rem;
+}
+
+.content h4 {
+  margin-bottom: 0.25rem;
+}
+
+.content p:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content blockquote:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.comments {
+  margin-left: 14%;
+}
+.comment-delete {
+  padding: 0.15em 0.15em;
+  text-decoration: none;
+  color: red;
+  border: solid 2px red;
+  border-radius: 3px;
+  transition: .4s;
+}
+.comment-delete:hover {
+  background: red;
+  color: white;
+  font-weight: bold;
+}
+.comment-caution {
+  margin: 10px 0 0 14% ;
+  color: #ff6666;
+  font-weight: bold;
+}

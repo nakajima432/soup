@@ -10,7 +10,7 @@
           .card-image
             %figure.image.is-4by3
               %tr
-                %td= image_tag @cafeteria.image.to_s
+                %td= image_tag @cafeteria.image.to_s, fallback: "images/no-image.png"
           .card-content
             .media
               .media-content
@@ -19,11 +19,11 @@
                 .cafeteriaDate
                   = @cafeteria.created_at.strftime("%Y年%m月%d日 %H時%M分")
             .content
-              %table.table.is-narrow
+              %table
                 %tr
-                  %th 感想
+                  %h4.mpression 感想
                 %tr
-                  %td= simple_format @cafeteria.detail
+                  = simple_format @cafeteria.detail
               - if user_signed_in? && current_user.id == @cafeteria.user_id
                 .videoManage
                 = link_to "編集画面へ", edit_cafeteria_path(@cafeteria.id), class: "button is-success cafeteriaManage__edit"
@@ -40,4 +40,26 @@
               %i.fas.fa-user{"aria-hidden" => "true"}
             = @cafeteria.user.username
             さんのページへ
+  .container
+  - if current_user
+    = form_with model: [@cafeteria, @comment], class: "form", url: "/cafeterias/#{@cafeteria.id}/comments", local: true do |f|
+      .field
+        = f.label :text, "コメントを投稿する", class: "label"
+        = f.text_area :text, placeholder: "コメント内容", rows: "3"
+      = f.submit "SEND", class: "comment-btn"
+  - else
+    %strong
+      %p.comment-caution ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+  .comments
+    %h4 ＜コメント一覧＞
+    - if @comments
+      - @comments.each do |comment|
+        %p
+          %strong
+            = link_to comment.user.username, "/users/#{comment.user_id}"
+            ：
+          = comment.text
+          = comment.created_at.strftime("(%Y年%m月%d日 %H時%M分)")
+          - if user_signed_in? && current_user.id == comment.user_id
+            = link_to "削除", cafeteria_comment_path(comment.cafeteria.id, comment.id), method: :delete, class: "comment-delete"
 = render "shared/footer"

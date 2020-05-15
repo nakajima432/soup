@@ -1,0 +1,2 @@
+module Cafeterias::SearchesHelper
+end

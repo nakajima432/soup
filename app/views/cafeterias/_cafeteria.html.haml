@@ -4,7 +4,10 @@
       %figure.image.is-4by3
         =link_to cafeteria_path(cafeteria.id), class: "content-image__box" do
           %tr
+          - if cafeteria.image?
             %td= image_tag cafeteria.image.to_s
+          - else
+            %td= image_tag "images/default.png"
     .card-content
       .cafeteria-name
         = link_to cafeteria.name, cafeteria_path(cafeteria.id), class: "content__right__top--title"
@@ -19,16 +22,3 @@
         .detail--date
           = cafeteria.created_at.strftime("%Y年%m月%d日 %H時%M分")
   
-
-
-
-    -# .card-content
-    -#   .media
-    -#     .media-left
-    -#       %figure.image.is-48x48
-    -#         = attachment_image_tag recipe.user, :profile_image, fallback: "no-image.png", class: "profile_image"
-    -#     .media-content
-    -#       .title= link_to recipe.user.username, user_path(recipe.user)
-    -#   .content
-    -#     %time>= recipe.updated_at.strftime("%Y-%m-%d %H:%M")
-    -#     更新

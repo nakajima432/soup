@@ -3,7 +3,15 @@ class Cafeteria < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
+  has_many :comments
+
 
   mount_uploader :image, ImageUploader
-  attachment :profile_image
+  def self.search(search)
+    if search
+      Cafeteria.where(['addres LIKE(?) OR detail LIKE (?) OR name LIKE (?)', "%#{search}%", "%#{search}%", "%#{search}%"])
+    else
+      Cafeteria.all
+    end
+  end
 end

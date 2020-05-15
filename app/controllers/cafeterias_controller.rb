@@ -1,5 +1,5 @@
 class CafeteriasController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: %i[index show search]
   before_action :set_cafeteria, only: [:show, :edit]
 
   def index
@@ -19,6 +19,8 @@ class CafeteriasController < ApplicationController
 
   def show
     @user = current_user
+    @comment = Comment.new
+    @comments = @cafeteria.comments.includes(:user)
   end
 
   def edit
