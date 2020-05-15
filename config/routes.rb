@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :cafeterias do
     resources :comments, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update] 
 end

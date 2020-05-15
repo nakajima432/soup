@@ -1,7 +1,7 @@
 #header.big-bg
   .wrapper
     = render "shared/header"
-  .page-title #{@cafeteria.name}の詳細
+  .page-title 「#{@cafeteria.name}」の詳細
 %section.section
   .container
     .columns.is-centered
@@ -18,6 +18,16 @@
                   = @cafeteria.name
                 .cafeteriaDate
                   = @cafeteria.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                - if user_signed_in?
+                  - if current_user.already_liked?(@cafeteria)
+                    = link_to cafeteria_like_path(@cafeteria), method: :delete do
+                      %i.fas.fa-heart.like-btn
+                    = @cafeteria.likes.count 
+                  - else
+                    = link_to cafeteria_likes_path(@cafeteria), method: :post do
+                      %i.far.fa-heart.unlike-btn
+                    = @cafeteria.likes.count
+                - else
             .content
               %table
                 %tr

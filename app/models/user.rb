@@ -10,4 +10,7 @@ class User < ApplicationRecord
   has_many :liked_cafeterias, through: :likes, source: :cafeteria
   has_many :comments
   validates :username, presence: true
+  def already_liked?(cafeteria)
+    self.likes.exists?(cafeteria_id: cafeteria.id)
+  end
 end

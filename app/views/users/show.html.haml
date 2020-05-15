@@ -22,6 +22,10 @@
               %tr
                 %td
                   = @user.profile
+.likes-show
+  %p.like-cafeterias いいねしているお店の名前一覧
+  - @user.liked_cafeterias.each do |cafeteria|
+    = link_to cafeteria.name, cafeteria_path(cafeteria.id)
 .list-cafeterias #{@user.username}さんの投稿一覧
 %section.section
   .cafeterias-container
