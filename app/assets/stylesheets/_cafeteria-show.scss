@@ -23,6 +23,9 @@
   margin-bottom: 0.5em;
 }
 
+.comments {
+  margin-left: 14%;
+}
 .comment-delete {
   padding: 0.15em 0.15em;
   text-decoration: none;
@@ -34,5 +37,10 @@
 .comment-delete:hover {
   background: red;
   color: white;
+  font-weight: bold;
+}
+.comment-caution {
+  margin: 10px 0 0 14% ;
+  color: #ff6666;
   font-weight: bold;
 }

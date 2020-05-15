@@ -4,7 +4,10 @@
       %figure.image.is-4by3
         =link_to cafeteria_path(cafeteria.id), class: "content-image__box" do
           %tr
+          - if cafeteria.image?
             %td= image_tag cafeteria.image.to_s
+          - else
+            %td= image_tag "images/default.png"
     .card-content
       .cafeteria-name
         = link_to cafeteria.name, cafeteria_path(cafeteria.id), class: "content__right__top--title"
@@ -22,3 +25,8 @@
 
 
 
+-# <% if post.user.image? %>
+-#   <img src='<%= post.user.image %>' class="icon" alt="ユーザーアイコン">
+-# <% else %>
+-#   <image src="/assets/default.png" class="icon" alt="ユーザーアイコン" %>
+-# <% end %>

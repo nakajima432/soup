@@ -9,13 +9,13 @@
         .column.is-5
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .field
-              = f.label :email, class: "label"
+              = f.label :メールアドレス, class: "label"
               %p.control.has-icons-left
                 = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "input"
                 %span.icon.is-small.is-left
                   %i.fas.fa-envelope
             .field
-              = f.label :password, class: "label"
+              = f.label :パスワード, class: "label"
               %p.control.has-icons-left
                 = f.password_field :password, autocomplete: "current-password", placeholder: "password", class: "input"
                 %span.icon.is-small.is-left
