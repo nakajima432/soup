@@ -21,6 +21,7 @@ class CafeteriasController < ApplicationController
     @user = current_user
     @comment = Comment.new
     @comments = @cafeteria.comments.includes(:user)
+    @like = Like.new
   end
 
   def edit
