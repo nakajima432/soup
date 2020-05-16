@@ -13,8 +13,13 @@ class CafeteriasController < ApplicationController
   end
 
   def create
-    Cafeteria.create(cafeteria_params)
-    redirect_to cafeterias_path
+    @cafeteria = Cafeteria.create(cafeteria_params)
+    if @cafeteria.save
+      redirect_to cafeterias_path, notice: "子ども食堂を投稿しました。"
+    else
+      flash.now[:alert] = "画像以外の項目は必ず記入してください。"
+      render :new
+    end
   end
 
   def show
@@ -26,12 +31,19 @@ class CafeteriasController < ApplicationController
 
   def edit
     @user = current_user
+    if @cafeteria.user != current_user
+      redirect_to cafeterias_path, alert: "不正なアクセスです。"
+    end
   end
 
   def update
-    cafeteria = Cafeteria.find(params[:id])
-    cafeteria.update(cafeteria_params)
-    redirect_to cafeteria_path(cafeteria.id)
+    @cafeteria = Cafeteria.find(params[:id])
+    if @cafeteria.update(cafeteria_params)
+      redirect_to cafeteria_path(@cafeteria.id), notice: "子ども食堂を編集しました。"
+    else
+      flash.now[:alert] = "画像以外の項目は必ず記入してください。"
+      render :edit
+    end
   end
 
   def destroy

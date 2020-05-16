@@ -28,6 +28,9 @@
                       %i.far.fa-heart.unlike-btn
                     = @cafeteria.likes.count
                 - else
+                  %i.fas.fa-heart.like-btn
+                  = @cafeteria.liked_users.count
+                  件
             .content
               %table
                 %tr
