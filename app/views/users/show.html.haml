@@ -3,25 +3,20 @@
     = render "shared/header"
   .page-title #{@user.username}さんのマイページ
 %section.section
-  .container
-    .columns.is-centered
-      .column.is-8
-        .columns.is-centered
-          .column.is-4
-            %figure.image.is-128x128{style: "margin-left: auto; margin-right: auto;"}
-              = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png", class: "profile-image", fill: "300, 300"
-          .column.is-8
-            %table.table.is-fullwidth
-              %tr
-                %td.is-size-4
-                  %strong= @user.username
-                - if user_signed_in? && @user.id == current_user.id
-                  %td
-                    = link_to "編集", edit_user_path(@user), class: "button is-primary"
-            %table.table.is-fullwidth
-              %tr
-                %td
-                  = @user.profile
+  .user-container
+    .column.is-12
+      .column.is-4
+        %figure.image.is-128x128{style: "margin-left: auto; margin-right: auto;"}
+          = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png", class: "profile-image", fill: "300, 300"
+      .column-table
+        .table
+          .is-size-5
+            ユーザー名 :
+            %strong= @user.username
+          - if user_signed_in? && @user.id == current_user.id
+            = link_to "プロフィール編集", edit_user_path(@user), class: "button is-primary"
+          .profile 
+            = @user.profile
 .likes-show
   %p.like-cafeterias いいねしているお店の名前一覧
   - @user.liked_cafeterias.each do |cafeteria|
@@ -34,3 +29,26 @@
         = render partial: "cafeterias/cafeteria", locals: { cafeteria: cafeteria }
       = paginate(@cafeterias)
 = render "shared/footer"
+
+-# %section.section
+-#   .container
+-#     .columns.is-centered
+-#       .column.is-8
+-#         .columns.is-centered
+-#           .column.is-4
+-#             %figure.image.is-128x128{style: "margin-left: auto; margin-right: auto;"}
+-#               = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png", class: "profile-image", fill: "300, 300"
+-#           .column-table
+-#             %table.table.is-fullwidth
+-#               %tr
+-#                 %td.is-size-5
+-#                   ユーザー名 :
+-#                   %strong= @user.username
+-#                 - if user_signed_in? && @user.id == current_user.id
+-#                   %td
+-#                     = link_to "編集", edit_user_path(@user), class: "button is-primary"
+-#             %table.table.is-fullwidth
+-#               %tr
+-#                 %td
+-#                   プロフィール : 
+-#                   = @user.profile
