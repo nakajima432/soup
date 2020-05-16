@@ -34,7 +34,7 @@
             .content
               %table
                 %tr
-                  %h4.mpression 感想
+                  %h4.impression 感想
                 %tr
                   = simple_format @cafeteria.detail
               - if user_signed_in? && current_user.id == @cafeteria.user_id
