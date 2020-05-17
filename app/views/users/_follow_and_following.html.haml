@@ -1,0 +1,27 @@
+- @users.each do |user|
+  %section.section
+    .user-container
+      .column.is-12
+        .column.is-4
+          %figure.image.is-128x128{style: "margin-left: auto; margin-right: auto;"}
+            = link_to user_path(user) do
+              = attachment_image_tag user, :profile_image, fallback: "images/no-image.png", class: "profile-image", fill: "300, 300"
+        .column-table
+          .table
+            .is-size-5
+              = link_to user_path(user) do
+                ユーザー名 :
+                %strong= user.username
+            #follow_form
+              .fcount2
+                = link_to following_user_path(user) do
+                  %span.follow-text
+                    = user.following.count
+                    フォロー
+              .fcount2
+                = link_to followers_user_path(user) do
+                  %span.follow-text
+                    = user.followers.count
+                    フォロワー
+            .profile 
+              = user.profile

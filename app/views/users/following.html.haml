@@ -1,0 +1,10 @@
+#header.big-bg
+  .wrapper
+    = render "shared/header"
+  .page-title #{@user.username}さんがフォローしているユーザー
+- if @users.empty?
+  %p.no-follow_and_following Not following
+  .follow-img
+- else
+  = render "follow_and_following"
+= render "shared/footer"
