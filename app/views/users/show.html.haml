@@ -14,7 +14,20 @@
             ユーザー名 :
             %strong= @user.username
           - if user_signed_in? && @user.id == current_user.id
-            = link_to "プロフィール編集", edit_user_path(@user), class: "button is-primary"
+            .edit-fcount-box
+              = link_to "編集", edit_user_path(@user), class: "button is-primary"
+              .fcount
+                = link_to following_user_path(@user.id) do
+                  %span.follow-text
+                    = @user.following.count
+                    フォロー
+              .fcount
+                = link_to followers_user_path(@user.id) do
+                  %span.follow-text
+                    = @user.followers.count
+                    フォロワー
+          - else
+            = render "users/follow_form", user: @user
           .profile 
             = @user.profile
 .likes-show
@@ -29,26 +42,3 @@
         = render partial: "cafeterias/cafeteria", locals: { cafeteria: cafeteria }
       = paginate(@cafeterias)
 = render "shared/footer"
-
--# %section.section
--#   .container
--#     .columns.is-centered
--#       .column.is-8
--#         .columns.is-centered
--#           .column.is-4
--#             %figure.image.is-128x128{style: "margin-left: auto; margin-right: auto;"}
--#               = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png", class: "profile-image", fill: "300, 300"
--#           .column-table
--#             %table.table.is-fullwidth
--#               %tr
--#                 %td.is-size-5
--#                   ユーザー名 :
--#                   %strong= @user.username
--#                 - if user_signed_in? && @user.id == current_user.id
--#                   %td
--#                     = link_to "編集", edit_user_path(@user), class: "button is-primary"
--#             %table.table.is-fullwidth
--#               %tr
--#                 %td
--#                   プロフィール : 
--#                   = @user.profile

@@ -1,0 +1,20 @@
+#follow_form
+  .fbtn.right
+    - if user_signed_in? && @user != current_user
+      - if current_user.following?(@user)
+        = form_for(current_user, url: relationship_path(@user), method: :delete, remote: true) do |f|
+          = f.submit "フォロー中", action: "create", remote: true, class: "unfollow-btn"
+      - else
+        = form_for(current_user, url: relationships_path, method: :post, remote: true) do |f|
+          = hidden_field_tag :following_id, @user.id
+          = f.submit "フォローする", action: "create", remote: true, class: "follow-btn"
+  .fcount
+    = link_to following_user_path(@user.id) do
+      %span.follow-text
+        = @user.following.count
+        フォロー
+  .fcount
+    = link_to followers_user_path(@user.id) do
+      %span.follow-text
+        = @user.followers.count
+        フォロワー
