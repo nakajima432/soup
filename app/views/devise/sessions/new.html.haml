@@ -13,13 +13,11 @@
               %p.control.has-icons-left
                 = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "input"
                 %span.icon.is-small.is-left
-                  %i.fas.fa-envelope
             .field
               = f.label :パスワード, class: "label"
               %p.control.has-icons-left
                 = f.password_field :password, autocomplete: "current-password", placeholder: "password", class: "input"
                 %span.icon.is-small.is-left
-                  %i.fas.fa-lock
             .actions
               = f.submit "ログイン", class: "button is-success"
           = render "devise/shared/links"

@@ -13,13 +13,11 @@
             %p.control.has-icons-left
               = f.text_field :username, autofocus: true, autocomplete: "email", placeholder: "username", class: "input"
               %span.icon.is-small.is-left
-                %i.fas.fa-user
           .field
             = f.label :メールアドレス, class: "label"
             %p.control.has-icons-left
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "input"
               %span.icon.is-small.is-left
-                %i.fas.fa-envelope
           .field
             = f.label :パスワード, class: "label"
             - if @minimum_password_length
@@ -28,13 +26,11 @@
             %p.control.has-icons-left
               = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "input"
               %span.icon.is-small.is-left
-                %i.fas.fa-lock
           .field
             = f.label :パスワード（確認用）, class: "label"
             %p.control.has-icons-left
               = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password confirmation", class: "input"
               %span.icon.is-small.is-left
-                %i.fas.fa-lock
           .actions
             = f.submit "新規登録", class: "button is-success"
         = render "devise/shared/links"
