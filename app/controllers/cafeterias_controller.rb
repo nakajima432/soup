@@ -49,7 +49,7 @@ class CafeteriasController < ApplicationController
   def destroy
     cafeteria = Cafeteria.find(params[:id])
     cafeteria.destroy
-    redirect_to cafeterias_path
+    redirect_to user_path(cafeteria.user), notice: "該当の記事を削除しました。"
   end
 
   private
