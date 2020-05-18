@@ -5,8 +5,8 @@ class Cafeteria < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   has_many :comments
 
-
   mount_uploader :image, ImageUploader
+
   def self.search(search)
     if search
       Cafeteria.where(['addres LIKE(?) OR detail LIKE (?) OR name LIKE (?)', "%#{search}%", "%#{search}%", "%#{search}%"])
@@ -14,4 +14,9 @@ class Cafeteria < ApplicationRecord
       Cafeteria.all
     end
   end
+
+  def self.create_all_ranks
+    Cafeteria.joins(:likes).group(:cafeteria_id).order('count(cafeteria_id) desc')
+  end
+
 end

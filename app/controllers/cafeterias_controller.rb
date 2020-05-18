@@ -1,10 +1,15 @@
 class CafeteriasController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show search]
+  before_action :authenticate_user!, except: %i[index show search popular]
   before_action :set_cafeteria, only: [:show, :edit]
 
   def index
     @user = current_user
     @cafeterias = Cafeteria.includes(:user).order("created_at DESC").page(params[:page]).per(6)
+  end
+
+  def popular
+    @all_ranks = Cafeteria.create_all_ranks.page(params[:page]).per(6)
+    @cafeterias = @all_ranks.includes(:user)
   end
 
   def new
