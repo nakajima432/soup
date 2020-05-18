@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :cafeterias do
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
+
+    collection do
+      get :popular
+    end
   end
 
   resources :users, only: [:show, :edit, :update] do

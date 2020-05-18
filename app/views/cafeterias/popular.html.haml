@@ -1,7 +1,7 @@
 #header.big-bg
   .wrapper
     = render "shared/header"
-  .page-title 食堂一覧
+  .page-title 食堂一覧（いいねの多い順）
 .search-container
   = form_with(url: cafeterias_searches_path, local: true, method: :get, class: "search-form") do |f|
     = f.text_field :keyword, placeholder: "キーワードを入力", class: "search-input"
@@ -14,7 +14,7 @@
 %section.section
   .cafeterias-container
     .columns.is-multiline
-      - @cafeterias.each do |cafeteria|
+      - @all_ranks.each do |cafeteria|
         = render partial: "cafeteria", locals: { cafeteria: cafeteria }
       = paginate(@cafeterias)
 = render "shared/footer"
