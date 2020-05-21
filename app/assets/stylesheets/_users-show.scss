@@ -32,6 +32,10 @@
   margin-bottom: 5px;
 }
 
+#follow_form a {
+  text-decoration: none;
+}
+
 .follow-btn {
   display: block;
 	padding: 0.2em;
@@ -101,5 +105,13 @@
   font-weight: bold;
   padding: 0 15px;
   margin: 0;
+}
+
+.edit-fcount-box a {
+  text-decoration: none;
+}
+
+.likes-show a {
+  text-decoration: none;
 }
 

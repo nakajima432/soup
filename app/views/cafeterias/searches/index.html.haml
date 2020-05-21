@@ -6,6 +6,11 @@
   = form_with(url: cafeterias_searches_path, local: true, method: :get, class: "search-form") do |f|
     = f.text_field :keyword, placeholder: "キーワードを入力", class: "search-input"
     = f.submit "検索", class: "search-btn"
+.buttons.has-addons
+  = link_to cafeterias_path do
+    %button.button 新着
+  = link_to popular_cafeterias_path do
+    %button.button 人気
 %section.section
   .cafeterias-container
     .columns.is-multiline

@@ -2,36 +2,37 @@
   .wrapper
     = render "shared/header"
   .page-title 新規登録
-%section.section
-  .container
-    .columns.is-centered
-      .column.is-5
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          = render "devise/shared/error_messages", resource: resource
-          .field
-            = f.label :ユーザー名, class: "label"
-            %p.control.has-icons-left
-              = f.text_field :username, autofocus: true, autocomplete: "email", placeholder: "username", class: "input"
-              %span.icon.is-small.is-left
-          .field
-            = f.label :メールアドレス, class: "label"
-            %p.control.has-icons-left
-              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "input"
-              %span.icon.is-small.is-left
-          .field
-            = f.label :パスワード, class: "label"
-            - if @minimum_password_length
-              %em
-                (#{@minimum_password_length} 文字以上)
-            %p.control.has-icons-left
-              = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "input"
-              %span.icon.is-small.is-left
-          .field
-            = f.label :パスワード（確認用）, class: "label"
-            %p.control.has-icons-left
-              = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password confirmation", class: "input"
-              %span.icon.is-small.is-left
-          .actions
-            = f.submit "新規登録", class: "button is-success"
-        = render "devise/shared/links"
+.registrations-box
+  %section.section
+    .container
+      .columns.is-centered
+        .column.is-5
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .field
+              = f.label :ユーザー名, class: "label"
+              %p.control.has-icons-left
+                = f.text_field :username, autofocus: true, autocomplete: "email", placeholder: "username", class: "input"
+                %span.icon.is-small.is-left
+            .field
+              = f.label :メールアドレス, class: "label"
+              %p.control.has-icons-left
+                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "input"
+                %span.icon.is-small.is-left
+            .field
+              = f.label :パスワード, class: "label"
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} 文字以上)
+              %p.control.has-icons-left
+                = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "input"
+                %span.icon.is-small.is-left
+            .field
+              = f.label :パスワード（確認用）, class: "label"
+              %p.control.has-icons-left
+                = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password confirmation", class: "input"
+                %span.icon.is-small.is-left
+            .actions
+              = f.submit "新規登録", class: "button is-success"
+          = render "devise/shared/links"
 = render "shared/footer"

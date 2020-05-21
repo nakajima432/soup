@@ -11,6 +11,11 @@ a {
   color: #432;
   margin-right: 3px;
 }
+a.home-link {
+  text-decoration: none;
+  color: #432;
+  margin-right: 3px;
+}
 a:hover {
   color: #0bd;
 }
@@ -23,8 +28,8 @@ img {
 }
 
 // ログイン画面のビューを整える
-.section-box {
-  margin-bottom: 183px;
+.sessions-box {
+  margin-bottom: 205px;
 }
 .actions {
   margin-bottom: 10px;
@@ -40,4 +45,12 @@ img {
 }
 #user_password_confirmation {
   padding: 0.5em;
+}
+
+.label {
+  text-align: left;
+}
+// 新規登録画面のビューを整える
+.registrations-box {
+  margin-bottom: 10px;
 }

@@ -21,6 +21,8 @@ $top-text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru G
   font-weight: normal;
   color: white;
   text-shadow:0 0 10px #996600;
+  margin-bottom: 10px;
+  line-height: 1.5;
   }
 
   .button {
@@ -30,6 +32,7 @@ $top-text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru G
   color: #fff;
   border-radius: 5px;
   padding: 18px 32px;
+  text-decoration: none;
   // margin-left: 8%;
   }
 }

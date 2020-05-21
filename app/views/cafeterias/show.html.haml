@@ -20,19 +20,19 @@
                   = @cafeteria.addres
                 .cafeteriaDate
                   = @cafeteria.created_at.strftime("%Y年%m月%d日 %H時%M分")
-                - if user_signed_in?
-                  - if current_user.already_liked?(@cafeteria)
-                    = link_to cafeteria_like_path(@cafeteria), method: :delete do
-                      %i.fas.fa-heart.like-btn
-                    = @cafeteria.likes.count 
-                  - else
-                    = link_to cafeteria_likes_path(@cafeteria), method: :post do
-                      %i.far.fa-heart.unlike-btn
-                    = @cafeteria.likes.count
+              - if user_signed_in?
+                - if current_user.already_liked?(@cafeteria)
+                  = link_to cafeteria_like_path(@cafeteria), method: :delete do
+                    %i.fas.fa-heart.like-btn
+                  = @cafeteria.likes.count 
                 - else
-                  %i.fas.fa-heart.like-btn
-                  = @cafeteria.liked_users.count
-                  件
+                  = link_to cafeteria_likes_path(@cafeteria), method: :post do
+                    %i.far.fa-heart.unlike-btn
+                  = @cafeteria.likes.count
+              - else
+                %i.fas.fa-heart.like-btn
+                = @cafeteria.liked_users.count
+                件
             .content
               %table
                 %tr

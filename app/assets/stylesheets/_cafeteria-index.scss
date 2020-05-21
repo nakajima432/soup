@@ -2,6 +2,10 @@ $text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothi
 
 
 .card-content {
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  .cafeteria-name {
+    margin-bottom: 8px;
+  }
   .cafeteria-name a {
     font-family: $text;
     color: #432;
@@ -9,12 +13,19 @@ $text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothi
   .cafeteria-name a:hover {
     color: #0bd;
   }
-  .media--userName {
-    margin-top: 12px;
-  }
-  .media--userName a {
-    color: #432;
-    font-family: $text;
+  .media-box {
+    margin: 0.6rem 0 1rem 0;
+    display: flex;
+    .media--userName {
+      margin-top: 12px;
+    }
+    .media-left {
+      margin-right: 5px;
+    }
+    .media--userName a {
+      color: #432;
+      font-family: $text;
+    }
   }
   .media--userName a:hover {
     color: #0bd;
@@ -24,6 +35,10 @@ $text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothi
       color: #432;
     }
   }
+}
+
+.card-content.media {
+  margin-bottom: 1rem;
 }
 
 .cafeterias-container {
@@ -48,4 +63,20 @@ $text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothi
 
 .buttons.has-addons {
   margin: 1% 0 0 15.5%;
+}
+
+.cafeteria-name a {
+  text-decoration: none;
+}
+
+.media--userName a {
+  text-decoration: none;
+}
+
+.pagination {
+  margin-left: 15px;
+}
+
+.media-box {
+  margin: 1rem 0;
 }

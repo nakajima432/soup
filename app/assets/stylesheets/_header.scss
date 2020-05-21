@@ -8,6 +8,7 @@ $header-text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Mar
 .page-header {
   display: flex;
   justify-content: space-between;
+  border-bottom: 0;
   .title-list {
     display: flex;
     .home-link {
@@ -20,7 +21,7 @@ $header-text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Mar
       }
     }
     .sub-title {
-      margin: 37px 0 0 15px;
+      margin: 42px 0 0 15px;
       font-family: $header-text;
       font-size: 1.1rem;
     }
@@ -31,6 +32,9 @@ $header-text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Mar
   }
 }
 
+.main-nav li a {
+  text-decoration: none;
+}
 
 .main-nav {
   display: flex;
@@ -63,4 +67,12 @@ $header-text: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Mar
 
 .attachment.user.profile_image {
   border-radius: 50%;
+}
+
+.comments a {
+  text-decoration: none;
+}
+
+.panel.is-link a {
+  text-decoration: none;
 }
