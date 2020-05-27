@@ -15,7 +15,8 @@
             %strong= @user.username
           - if user_signed_in? && @user.id == current_user.id
             .edit-fcount-box
-              = link_to "編集", edit_user_path(@user), class: "button is-primary"
+              - unless @user.email == "test@example.com"
+                = link_to "編集", edit_user_path(@user), class: "button is-primary"
               .fcount
                 = link_to following_user_path(@user.id) do
                   %span.follow-text
