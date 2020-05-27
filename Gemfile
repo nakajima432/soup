@@ -68,7 +68,6 @@ gem "bulma-rails"
 gem 'pry-rails'
 gem 'sprockets', '3.7.2'
 gem 'font-awesome-sass'
-gem 'font-awesome-sass'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'bootstrap', '~> 4.4.1'
