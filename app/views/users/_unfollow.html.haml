@@ -1,0 +1,12 @@
+= form_for(current_user, url: relationship_path(@user), method: :delete, remote: true) do |f|
+  = f.submit "フォロー中", action: "create", remote: true, class: "unfollow-btn"
+  .fcount
+    = link_to following_user_path(@user.id) do
+      %span.follow-text
+        = @user.following.count
+        フォロー
+  .fcount
+    = link_to followers_user_path(@user.id) do
+      %span.follow-text
+        = @user.followers.count
+        フォロワー
