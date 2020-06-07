@@ -1,13 +1,15 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(comment_params)
-    redirect_to "/cafeterias/#{comment.cafeteria.id}"
+    @cafeteria = Cafeteria.find(params[:cafeteria_id])
+    @comment = @cafeteria.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    render :index if @comment.save
   end
 
   def destroy
     @comment = Comment.find_by(id: params[:id],cafeteria_id: params[:cafeteria_id])
-    @comment.destroy
-    redirect_back(fallback_location: 'something')
+    @comment.destroy!
+    render :index if @comment.destroy
   end
 
   private
