@@ -17,18 +17,10 @@
             .edit-fcount-box
               - unless @user.email == "test@example.com"
                 = link_to "編集", edit_user_path(@user), class: "button is-primary"
-              .fcount
-                = link_to following_user_path(@user.id) do
-                  %span.follow-text
-                    = @user.following.count
-                    フォロー
-              .fcount
-                = link_to followers_user_path(@user.id) do
-                  %span.follow-text
-                    = @user.followers.count
-                    フォロワー
+              = render "fcount"
           - else
-            = render "users/follow_form", user: @user
+            #follow_form
+              = render "users/follow_form", user: @user
           .profile 
             = @user.profile
 .likes-show
