@@ -9,7 +9,8 @@
 - マイページ
 ![ee983157326a5b50365f002ecd05f14c](https://user-images.githubusercontent.com/55951319/83965657-1f5c9500-a8f0-11ea-873f-92f2cef905d1.png)
 
-![result](https://user-images.githubusercontent.com/55951319/83965977-87ac7600-a8f2-11ea-8d7b-0303cd675b9b.gif)
+- 主な操作画面
+![result](https://user-images.githubusercontent.com/55951319/83966327-8aa86600-a8f4-11ea-8395-b1191344a250.gif)
 
 ## 制作背景
 
