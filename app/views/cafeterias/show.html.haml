@@ -48,7 +48,7 @@
   - if current_user
     = form_with model: [@cafeteria, @comment], class: "form", url: "/cafeterias/#{@cafeteria.id}/comments", local: true do |f|
       .field
-        = f.label :text, "コメントを投稿する", class: "label"
+        = f.label :text, "コメントを投稿する", class: "comment-label"
         = f.text_area :text, placeholder: "コメント内容", rows: "3"
       = f.submit "SEND", class: "comment-btn"
   - else
