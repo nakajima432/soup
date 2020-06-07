@@ -46,7 +46,7 @@
             さんのページへ
   .container
   - if current_user
-    = form_with model: [@cafeteria, @comment], class: "form", url: "/cafeterias/#{@cafeteria.id}/comments", local: true do |f|
+    = form_with model: [@cafeteria, @comment], class: "form", url: "/cafeterias/#{@cafeteria.id}/comments",remote: true do |f|
       .field
         = f.label :text, "コメントを投稿する", class: "comment-label"
         = f.text_area :text, placeholder: "コメント内容", rows: "3"
@@ -57,13 +57,6 @@
   .comments
     %h4 ＜コメント一覧＞
     - if @comments
-      - @comments.each do |comment|
-        %p
-          %strong
-            = link_to comment.user.username, "/users/#{comment.user_id}"
-            ：
-          = comment.text
-          = comment.created_at.strftime("(%Y年%m月%d日 %H時%M分)")
-          - if user_signed_in? && current_user.id == comment.user_id
-            = link_to "削除", cafeteria_comment_path(comment.cafeteria.id, comment.id), method: :delete, class: "comment-delete"
+      #comments_area
+        = render partial: 'comments/index', locals: { comments: @comments }
 = render "shared/footer"
