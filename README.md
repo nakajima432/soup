@@ -3,7 +3,11 @@
 就職活動用のポートフォリオとして制作した自作アプリです。<br />
 お気に入りの子ども食堂を投稿でき、その他いいねやフォローなどの基本的な機能も実装しています。まだデプロイできておりませんが、開発環境にDocker、インフラにAWSを使用していく予定です。
 
-![soup-preview](https://i.gyazo.com/665a3a8ea2f5364d56d54f8037667932.mp4)
+- 食堂一覧
+![4707e7c6b4d41f0e4cb3791bdac2f467](https://user-images.githubusercontent.com/55951319/83965593-ab21f180-a8ef-11ea-8027-ec4902c3fbfe.png)
+
+- マイページ
+![ee983157326a5b50365f002ecd05f14c](https://user-images.githubusercontent.com/55951319/83965657-1f5c9500-a8f0-11ea-873f-92f2cef905d1.png)
 
 ## 制作背景
 
