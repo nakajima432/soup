@@ -28,8 +28,10 @@
 }
 
 #follow_form {
-  display: flex;
   margin-bottom: 5px;
+  .edit_user {
+    display: flex;
+  }
 }
 
 #follow_form a {
@@ -105,10 +107,4 @@
 
 .likes-show a {
   text-decoration: none;
-}
-
-#follow_form {
-  .edit_user {
-    display: flex;
-  }
 }
