@@ -1,24 +1,56 @@
-# README
+# タイトル：Soup (子ども食堂交流コミュニティサイト)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+就職活動用のポートフォリオとして制作した自作アプリです。<br />
+お気に入りの子ども食堂を投稿でき、その他いいねやフォローなどの基本的な機能も実装しています。まだデプロイできておりませんが、開発環境にDocker、インフラにAWSを使用していく予定です。
 
-Things you may want to cover:
+- 食堂一覧
+![4707e7c6b4d41f0e4cb3791bdac2f467](https://user-images.githubusercontent.com/55951319/83965593-ab21f180-a8ef-11ea-8027-ec4902c3fbfe.png)
 
-* Ruby version
+- マイページ
+![ee983157326a5b50365f002ecd05f14c](https://user-images.githubusercontent.com/55951319/83965657-1f5c9500-a8f0-11ea-873f-92f2cef905d1.png)
 
-* System dependencies
+- 主な操作画面  
+![result](https://user-images.githubusercontent.com/55951319/83966327-8aa86600-a8f4-11ea-8395-b1191344a250.gif)
 
-* Configuration
+## 制作背景
 
-* Database creation
+こども食堂とは、地域住民や自治体が主体となり、無料または低価格帯で子どもたちに食事を提供するコミュニティの場を指します。単に「子どもたちの食事提供の場」としてだけではなく、帰りが遅い会社員、家事をする時間のない家族などが集まって食事をとることも可能です。
+しかし、子ども食堂の認知はまだまだ低く「得体の知れない場所」になっているため、支援の必要な家庭に普及できていません。そのため、カフェ感覚でフラットに参加してもいいことをアピールするために今回のアプリを作成しました。
 
-* Database initialization
+## URL
+デプロイはまだ完了しておりません。機能がある程度完成し、AWSの学習が終了したら追記いたします。
 
-* How to run the test suite
+* ログインページから【テストユーザー】として簡単ログインできるように設定しております。
 
-* Services (job queues, cache servers, search engines, etc.)
+## 使用技術
+* Ruby 2.5.1, Rails 5.0.7
+* MySQL 5.6.47
+* Puma
+* haml, Scss
+* bulma,bootstrap3（ボタン,ページネーションなど）
+* JQuery
+* refile、carrierwave （画像アップロード）
 
-* Deployment instructions
+## AWS構成図
+デプロイ後に追記いたします。
 
-* ...
+## 機能一覧
+- ユーザー機能（新規登録、ログイン、ログアウト機能）
+  - deviseを使用
+  - かんたんログイン
+- 記事関係の機能
+  - 記事投稿、記事詳細ページ、記事編集など
+- コメント機能
+  - コメント表示、コメント投稿、コメント削除機能
+- ページネーション機能
+  - kaminari + bootstrap3 を使用
+- いいね機能(Ajaxによる非同期通信)
+  - いいねのランキング機能
+- フォロー機能(Ajaxによる非同期通信)
+  - フォロー、フォロワー一覧表示機能
+- 投稿記事の検索機能
+
+## 課題、今後実装したい機能
+* RSpecでテストを充実させる
+* 通知機能、DM機能、ransackによる検索機能を追加
+* AWSによるデプロイ、docker、CircleCi CI/CDを使用する
