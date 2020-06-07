@@ -1,0 +1,13 @@
+- if user_signed_in?
+  - if current_user.already_liked?(@cafeteria)
+    = link_to cafeteria_like_path(cafeteria_id: cafeteria.id , id: cafeteria.likes[0].id), method: :delete, remote: true do
+      %i.fas.fa-heart.like-btn
+    = @cafeteria.likes.count 
+  - else
+    = link_to cafeteria_likes_path(cafeteria.id), method: :post, remote: true do
+      %i.far.fa-heart.unlike-btn
+    = @cafeteria.likes.count
+- else
+  %i.fas.fa-heart.like-btn
+  = @cafeteria.liked_users.count
+  件
