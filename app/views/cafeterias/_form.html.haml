@@ -1,20 +1,19 @@
-= form_with model: @cafeteria, class: "form", url: cafeterias_path, local: true do |f|
-  .field
-    = f.label :name, "お店の名前", class: "label"
-    = f.text_field :name, placeholder: :名前の記入, class: "form-contents"
-  .field
-    = f.label :image, "お店の画像", class: "label"
-    .prev-contents
-      - if @cafeteria.image.present?
-        .prev-content
-          = image_tag @cafeteria.image.to_s, alt: "preview", class: "prev-image"
-      - else
-        = image_tag "images/default.png", alt: "preview", class: "default-image"
-    = f.file_field :image, class: "cafeteria_img hidden_file"
-  .field
-    = f.label :addres, "お店の場所（〇〇区、〇〇市など）", class: "label"
-    = f.text_field :addres, placeholder: :場所, class: "form-contents"
-  .field
-    = f.label :detail, "子ども食堂の雰囲気や料理の感想", class: "label"
-    = f.text_area :detail, placeholder: :訪問した感想を教えてください, class: "form-detail"
-  = f.submit '投稿する', class: "form-btn"
+.field
+  = f.label :name, "お店の名前", class: "label"
+  = f.text_field :name, placeholder: :名前の記入, class: "form-contents"
+.field
+  = f.label :image, "お店の画像", class: "label"
+  .prev-contents
+    - if @cafeteria.image.present?
+      .prev-content
+        = image_tag @cafeteria.image.to_s, alt: "preview", class: "prev-image"
+    - else
+      = image_tag "images/default.png", alt: "preview", class: "default-image"
+  = f.file_field :image, class: "cafeteria_img hidden_file"
+.field
+  = f.label :addres, "お店の場所（〇〇区、〇〇市など）", class: "label"
+  = f.text_field :addres, placeholder: :場所, class: "form-contents"
+.field
+  = f.label :detail, "子ども食堂の雰囲気や料理の感想", class: "label"
+  = f.text_area :detail, placeholder: :訪問した感想を教えてください, class: "form-detail"
+= f.submit '投稿する', class: "form-btn"
