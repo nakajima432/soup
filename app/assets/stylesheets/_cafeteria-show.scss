@@ -77,7 +77,18 @@
 .profile-image {
   border-radius: 50%;
   width: 300px;
-  height: 300px;
+  height: 280px;
+  margin-bottom: 10px;
+  background: white;
+  border: #ee82ee 1.5px solid;
+}
+.profile-default-image {
+  border-radius: 50%;
+  width: 300px;
+  height: 280px;
+  background: white;
+  border: #ee82ee 1.5px solid;
+  margin-bottom: 10px;
 }
 
 .button.is-success.cafeteriaManage__edit {

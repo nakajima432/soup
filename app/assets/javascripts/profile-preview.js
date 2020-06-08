@@ -1,16 +1,15 @@
 $(document).on('turbolinks:load', function () {
   $(function () {
     // 画像をプレビュー表示させる.prev-contentを作成
-    function buildHTML(image) {
+    function buildHTML(profile_image) {
       var html =
         `
-        <div class="prev-content">
-          <img src="${image}", alt="preview" class="prev-image">
+        <div class="profile-prev-content">
+          <img src="${profile_image}", alt="profile-preview" class="attachment user profile_image profile-image">
         </div>
         `
       return html;
     }
-
     // 画像が選択された時に発火します
     $(document).on('change', '.hidden_file', function () {
       // .file_filedからデータを取得して変数fileに代入します
@@ -22,18 +21,18 @@ $(document).on('turbolinks:load', function () {
       // 読み込みが完了したら処理が実行されます
       reader.onload = function () {
         // 読み込んだファイルの内容を取得して変数imageに代入します
-        var image = this.result;
+        var profile_image = this.result;
         // プレビュー画像がなければ処理を実行します
-        if ($('.prev-content').length == 0) {
+        if ($('.profile-prev-content').length == 0) {
           // 読み込んだ画像ファイルをbuildHTMLに渡します
-          var html = buildHTML(image)
+          var html = buildHTML(profile_image)
           // 作成した.prev-contentをiconの代わりに表示させます
-          $('.prev-contents').prepend(html);
+          $('profile-prev-contents').prepend(html);
           // 画像が表示されるのでiconを隠します
-          $('.default-image').hide();
+          $('.profile-default-image').hide();
         } else {
           // もし既に画像がプレビューされていれば画像データのみを入れ替えます
-          $('.prev-content .prev-image').attr({ src: image });
+          $('.profile-prev-content .profile-image').attr({ src: profile_image });
         }
       }
     });
