@@ -10,8 +10,11 @@
     = f.label :email, "メールアドレス", class: "label"
     = f.email_field :email, class: "input"
   .field
-    = f.label :profile_image, "プロフィール画像", class: "label"  
-    = f.file_field :profile_image
+    = f.label :profile_image, "プロフィール画像", class: "label"
+    .profile-prev-contents
+      .profile-prev-content
+        = attachment_image_tag @user, :profile_image, fallback: "images/no-image.png", alt: "profile-preview", class: "profile-image"
+    = f.file_field :profile_image, class: "profile_img hidden_file"
   .field
     = f.label :profile, "プロフィール", class: "label"
     = f.text_area :profile, placeholder: :プロフィール情報を入力してください, class: "form-detail"
