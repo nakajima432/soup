@@ -1,0 +1,27 @@
+.notification-box {
+  margin: 1.5% 15%;
+  background: #fcfcfc;
+  padding: 0.5em 0.5em 0.5em 2em;
+  border: solid 3px gray;
+  border-radius: 3px;
+  .ncontent {
+  line-height: 1.5;
+  padding: 0.5em 0;
+  }
+}
+
+.ncontent-not {
+  margin-bottom: 41.6%;
+}
+
+.text-center {
+  height: 50px;
+  border-bottom: 2px solid #eeeeee;
+}
+.text-center span {
+  font-size: 20px;
+  line-height: 50px;
+}
+.text-center a {
+  text-decoration: none;
+}

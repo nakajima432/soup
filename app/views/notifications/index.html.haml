@@ -1,0 +1,33 @@
+#header.big-bg
+  .wrapper
+    = render "shared/header"
+  .page-title #{@user.username}さんの通知一覧
+.text-center
+  %span 通知
+  = link_to notification_path(@notifications), method: :delete do
+    %i.fas.fa-trash{style: "color: black;font-size: 18px;"}
+    %h7{style: "color: red;font-size: 18px;font-weight:bold;"} 全削除
+.notification-box
+  - if @notifications.exists?
+    - @notifications.each do |notification|
+      .ncontent
+        = link_to user_path(notification.visiter) do
+          = notification.visiter.username
+        %span さんが
+        - case notification.action
+        - when "follow" then
+          %i.material-icons.nicon
+          %span あなたをフォローしました。
+        - when "like" then
+          %i.material-icons.nicon
+          = link_to "あなたの投稿", cafeteria_path(notification.cafeteria_id)
+          にいいねしました。
+        - when "comment" then
+          %i.material-icons.nicon
+          = link_to "あなたの投稿", cafeteria_path(notification.cafeteria_id)
+          にコメントしました。
+        = " (#{time_ago_in_words(notification.created_at)}前)"
+  - else
+    .ncontent-not
+      %p 通知はありません
+= render "shared/footer"

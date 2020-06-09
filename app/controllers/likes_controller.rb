@@ -4,6 +4,7 @@ class LikesController < ApplicationController
     @cafeteria = Cafeteria.find(params[:cafeteria_id])
     like = current_user.likes.create(cafeteria_id: params[:cafeteria_id])
     like.save
+    @cafeteria.create_notification_like!(current_user)
   end
 
   def destroy

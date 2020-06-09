@@ -3,7 +3,11 @@ class CommentsController < ApplicationController
     @cafeteria = Cafeteria.find(params[:cafeteria_id])
     @comment = @cafeteria.comments.build(comment_params)
     @comment.user_id = current_user.id
-    render :index if @comment.save
+    @comment_cafeteria = @comment.cafeteria
+    if @comment.save
+      @comment_cafeteria.create_notification_comment!(current_user, @comment.id)
+      render :index
+    end
   end
 
   def destroy
