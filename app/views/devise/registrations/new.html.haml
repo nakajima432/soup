@@ -11,6 +11,7 @@
             = render "devise/shared/error_messages", resource: resource
             .field
               = f.label :ユーザー名, class: "label"
+              (7 文字以内)
               %p.control.has-icons-left
                 = f.text_field :username, autofocus: true, autocomplete: "email", placeholder: "username", class: "input"
                 %span.icon.is-small.is-left

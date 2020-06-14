@@ -1,0 +1,10 @@
+.fcount2
+  = link_to following_user_path(@user.id) do
+    %span.follow-text
+      = @user.following.count
+      フォロー
+.fcount2
+  = link_to followers_user_path(@user.id) do
+    %span.follow-text
+      = @user.followers.count
+      フォロワー
