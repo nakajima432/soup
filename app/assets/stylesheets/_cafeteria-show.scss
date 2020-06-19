@@ -96,7 +96,7 @@
 .button.is-success {
   position: relative;
   display: inline-block;
-  padding: 0.25em 0.5em;
+  padding: 0.5em 1em 1em 1em;
   text-decoration: none;
   color: #FFF;
   border: solid 1.5px #339966;
@@ -104,8 +104,16 @@
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   font-weight: bold;
 }
-.button.is-danger.cafeteriaManage__delete {
-  font-weight:bold;
+.button.is-danger {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em 1em 1em;
+  text-decoration: none;
+  color: #FFF;
+  border: solid 1.5px #CC3333;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  font-weight: bold;
  }
 
 .cafeteriaTitle {
