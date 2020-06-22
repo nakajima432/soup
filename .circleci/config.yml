@@ -9,7 +9,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "db:c0:f2:42:c1:b4:bc:2d:b1:4b:cd:88:5f:fa:20:61"
+            - "15:91:c3:2b:6c:84:9e:73:fd:3c:23:d0:3a:d7:1a:e1"
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/rails/soup/deploy-me.sh"
 
 workflows:
