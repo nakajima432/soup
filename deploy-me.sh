@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd /var/www/rails/soup && git pull
+cd /var/www/rails/soup/ && git pull
