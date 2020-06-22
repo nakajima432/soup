@@ -7,9 +7,9 @@ jobs:
     machine:
       enabled: true
     steps:
-    #   - add_ssh_keys:
-    #       fingerprints:
-    #         - "xxxxxxxxxxxxxxxxxxxxxxxxxxx" #上記メモったハッシュを指定
+      - add_ssh_keys:
+          fingerprints:
+            - "15:91:c3:2b:6c:84:9e:73:fd:3c:23:d0:3a:d7:1a:e1"
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/rails/soup/deploy-me.sh"
 
 workflows:
