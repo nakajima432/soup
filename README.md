@@ -1,7 +1,7 @@
 # タイトル：Soup (子ども食堂交流コミュニティサイト)
 
 就職活動用のポートフォリオとして制作した自作アプリです。<br />
-お気に入りの子ども食堂を投稿でき、その他いいねやフォローなどの基本的な機能も実装しています。インフラにAWSを使用しています。
+お気に入りの子ども食堂を投稿でき、その他いいねやフォローなどの基本的な機能も実装しています。インフラにAWS、自動デプロイにcircleCIを使用しています。
 
 - 食堂一覧
 ![4707e7c6b4d41f0e4cb3791bdac2f467](https://user-images.githubusercontent.com/55951319/83965593-ab21f180-a8ef-11ea-8027-ec4902c3fbfe.png)
@@ -20,11 +20,11 @@
 ## URL
 http://soup-child.work/
 
-* ログインページから【テストユーザー】として簡単ログインできるように設定しております。
+* ログインページから【ゲスト】として簡単ログインできるように設定しております。
 
 ## 使用技術
 * Ruby 2.5.1, Rails 5.2.4.3
-* MySQL 5.6.47
+* MySQL 5.7.30
 * Puma
 * haml, Scss
 * bulma,bootstrap3（ボタン,ページネーションなど）
@@ -32,7 +32,7 @@ http://soup-child.work/
 * refile、carrierwave （画像アップロード）
 
 ## AWS構成図
-![AWS構成図](https://user-images.githubusercontent.com/55951319/84610537-d9a65a80-aef5-11ea-803f-bcd167575cbe.png)
+![AWS構成図](https://user-images.githubusercontent.com/55951319/85269591-10124580-b4b3-11ea-8ae8-0e6f19a12735.png)
 
 ## 機能一覧
 - ユーザー機能（新規登録、ログイン、ログアウト機能）
@@ -56,4 +56,4 @@ http://soup-child.work/
 ## 課題、今後実装したい機能
 * RSpecでテストを充実させる
 * アドレスタグ、ransackによる検索機能を追加
-* docker、CircleCi CI/CDを使用する
+* dockerを使用する
