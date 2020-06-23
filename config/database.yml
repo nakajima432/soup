@@ -17,7 +17,7 @@ default: &default
   password:
   socket: /tmp/mysql.sock
           
-  development:
+development:
   <<: *default
   database: soup_development
 
