@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user
-  before_action :forbid_test_user, {only: [:edit,:update,:destroy]}
+  # before_action :forbid_test_user, {only: [:edit,:update,:destroy]}
 
   def show
     @cafeterias = @user.cafeterias.page(params[:page]).per(6).order("created_at DESC")
@@ -38,11 +38,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def forbid_test_user
-    if @user.email == "test@example.com"
-      flash[:alert] = "テストユーザーのため変更できません"
-      redirect_to user_path(@user)
-    end
-  end
+  # def forbid_test_user
+  #   if @user.email == "test@example.com"
+  #     flash[:alert] = "テストユーザーのため編集できません"
+  #     redirect_to user_path(@user)
+  #   end
+  # end
 
 end
