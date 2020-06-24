@@ -17,7 +17,10 @@
             .edit-fcount-box
               - unless @user.email == "test@example.com"
                 = link_to "編集", edit_user_path(@user), class: "button is-primary"
-              = render "fcount2"
+              - if @user.email == "test@example.com"
+                = render "fcount2"
+              - else
+                = render "fcount"
           - else
             #follow_form
               = render "users/follow_form", user: @user
