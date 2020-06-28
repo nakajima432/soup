@@ -4,7 +4,8 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         password_length: 6..128
 
   attachment :profile_image
   has_many :cafeterias

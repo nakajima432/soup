@@ -1,5 +1,8 @@
 class Cafeteria < ApplicationRecord
-  validates :name, :addres, :detail, presence: true
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :addres, presence: true
+  validates :detail, presence: true, length: { maximum: 1000 }
+
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
