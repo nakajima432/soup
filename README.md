@@ -30,6 +30,8 @@ http://soup-child.work/
 * bulma,bootstrap3（ボタン,ページネーションなど）
 * JQuery
 * refile、carrierwave （画像アップロード）
+* circleCI（自動デプロイ）
+* RSpec
 
 ## AWS構成図
 ![AWS構成図](https://user-images.githubusercontent.com/55951319/85269591-10124580-b4b3-11ea-8ae8-0e6f19a12735.png)
@@ -54,6 +56,7 @@ http://soup-child.work/
 - 通知機能
 
 ## 課題、今後実装したい機能
-* RSpecでテストを充実させる
+* アルゴリズムやコンピューターサイエンス、Linuxの基礎学習
+* RSpecのテストをもっと充実させる
 * アドレスタグ、ransackによる検索機能を追加
 * dockerを使用する
